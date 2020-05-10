@@ -33,5 +33,16 @@ public class BasicTest {
         Assert.assertEquals(basic.multiply(-2.12f, -16.36f),34.6832f,0.01f);
 
     }
-    
+
+    @Test
+    public void testDivide(){
+
+        Basic basic=new Basic();
+        Assert.assertEquals(basic.divide(55.3f, 28.9f),1.913f,0.01f);
+        Assert.assertEquals(basic.divide(19.62f, -20.12f),-0.975f,0.01f);
+        Assert.assertEquals(basic.divide(-1.8f, 1.1f),-1.636f,0.01f);
+        Assert.assertEquals(basic.divide(-2.12f, -16.36f),0.12958f,0.01f);
+        Assert.assertEquals(basic.divide(-2.12f, 0f),Float.POSITIVE_INFINITY,0.01f);
+
+    }
 }

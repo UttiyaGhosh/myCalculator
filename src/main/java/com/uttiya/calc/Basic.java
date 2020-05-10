@@ -58,6 +58,18 @@ public class Basic {
                     System.out.println("Product is = " + res);
                     break;
 
+                case '4':
+                    System.out.println("Enter first number:");
+                    a = sc.nextFloat();
+                    System.out.println("Enter second number:");
+                    b = sc.nextFloat();
+                    res = basic.divide(a, b);
+                    if(res==Float.POSITIVE_INFINITY)
+                        System.out.println("Division by 0 is not possible");
+                    else
+                        System.out.println("Quotient is = " + res);
+                    break;
+
                 default:
                     System.out.println("Invalid choice");
             }
@@ -86,4 +98,15 @@ public class Basic {
         return c;
     }
 
+    float divide(float a, float b) {
+        logger.info("Dividing " + a + " by " + b);
+        if(b==0) {
+            logger.info("Division by zero error");
+            return Float.POSITIVE_INFINITY;
+        }else {
+            float c=a/b;
+            logger.info("Result is " + c);
+            return c;
+        }
+    }
 }
