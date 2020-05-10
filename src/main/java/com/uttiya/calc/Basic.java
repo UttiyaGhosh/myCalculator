@@ -26,9 +26,6 @@ public class Basic {
             System.out.println("Enter your choice:");
             choice = sc.next().charAt(0);
 
-            System.out.println("Enter your choice:");
-            choice = sc.next().charAt(0);
-
             switch (choice) {
 
                 case '1':
