@@ -1,10 +1,13 @@
 pipeline {
 		environment {
-    registry = "uttiya/myCalculator"
+    registry = "uttiya/mycalculator"
     registryCredential = 'DockerHub'
     dockerImage = ''
     dockerImageLatest = ''
   }
+  options {
+         skipDefaultCheckout true
+       }
   triggers {
         pollSCM 'H/2 * * * *'
     }
@@ -53,8 +56,8 @@ pipeline {
           script {
             step([$class: "RundeckNotifier",
                   includeRundeckLogs: true,
-                  jobId: "f5e40943-bcdc-4804-a1da-061128e865e2",
-                  rundeckInstance: "myCalc",
+                  jobId: " 8102a10b-49cf-4cfa-986c-ce9ee9c3ed58 ",
+                  rundeckInstance: "myCalculator",
                   shouldFailTheBuild: true,
                   shouldWaitForRundeckJob: true,
                   tailLog: true])
