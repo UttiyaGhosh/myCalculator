@@ -23,4 +23,15 @@ public class BasicTest {
 
     }
 
+    @Test
+    public void testMultiply(){
+
+        Basic basic=new Basic();
+        Assert.assertEquals(basic.multiply(55.3f, 28.9f),1598.17f,0.01f);
+        Assert.assertEquals(basic.multiply(19.62f, -20.12f),-394.7544f,0.01f);
+        Assert.assertEquals(basic.multiply(-1.8f, 1.1f),-1.98f,0.01f);
+        Assert.assertEquals(basic.multiply(-2.12f, -16.36f),34.6832f,0.01f);
+
+    }
+    
 }
