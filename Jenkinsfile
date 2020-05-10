@@ -13,22 +13,22 @@ pipeline {
     }
   agent any
   stages {
-    stage('Cloning Git') {
+    stage('Clone Git') {
       steps {
         git 'https://github.com/UttiyaGhosh/myCalculator.git'
       }
     }
-    stage('Build'){
-        steps {
-             sh 'mvn clean install'
-        }
-    }
-    stage('Test'){
+    stage('Unit Test'){
         steps {
              sh 'mvn test'
         }
     }
-    stage('Building image') {
+    stage('Build Jar'){
+        steps {
+             sh 'mvn clean install'
+        }
+    }
+    stage('Build Image') {
       steps{
         script {
           dockerImage = docker.build registry + ":$BUILD_NUMBER"
@@ -46,7 +46,7 @@ pipeline {
         }
       }
     }
-    stage('Remove Unused docker image') {
+    stage('Remove Unused Docker Image') {
       steps{
         sh "docker rmi $registry:$BUILD_NUMBER"
       }
