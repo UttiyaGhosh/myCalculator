@@ -70,6 +70,10 @@ public class Basic {
                         System.out.println("Quotient is = " + res);
                     break;
 
+                case '5':
+                    System.out.println("Bye!");
+                    break;
+                    
                 default:
                     System.out.println("Invalid choice");
             }
