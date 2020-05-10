@@ -30,6 +30,7 @@ public class Basic {
             choice = sc.next().charAt(0);
 
             switch (choice) {
+
                 case '1':
                     System.out.println("Enter first number:");
                     a = sc.nextFloat();
@@ -38,7 +39,15 @@ public class Basic {
                     res = basic.add(a, b);
                     System.out.println("Sum is = " + res);
                     break;
-
+                    
+                case '2':
+                    System.out.println("Enter first number:");
+                    a = sc.nextFloat();
+                    System.out.println("Enter second number:");
+                    b = sc.nextFloat();
+                    res = basic.subtract(a, b);
+                    System.out.println("Difference is = " + res);
+                    break;
                 default:
                     System.out.println("Invalid choice");
             }
@@ -49,6 +58,13 @@ public class Basic {
     float add(float a,float b){
         logger.info("Adding " + a + " with " + b);
         float c=a+b;
+        logger.info("Result is " + c);
+        return c;
+    }
+
+    float subtract(float a,float b){
+        logger.info("Subtracting " + a + " from " + b);
+        float c=a-b;
         logger.info("Result is " + c);
         return c;
     }
